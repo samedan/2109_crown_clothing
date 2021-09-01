@@ -1,0 +1,16 @@
+@media (min-width: 768px) {
+  .sign-in-and-sign-up {
+    width: 850px;
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 10px;
+  }
+}
+
+.sign-in-and-sign-up {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px !important;
+  margin: 30px auto;
+}
