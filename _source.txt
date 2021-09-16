@@ -1,3 +1,6 @@
 // Firebase Firestore
 firestore.collection('users').doc('tuuu65rgh_66');
 firestore.doc('/users/tuuu65rgh_66');
+
+// Stripe
+https://www.npmjs.com/package/react-stripe-checkout
