@@ -4,3 +4,6 @@ firestore.doc('/users/tuuu65rgh_66');
 
 // Stripe
 https://www.npmjs.com/package/react-stripe-checkout
+
+// Heroku
+https://git.heroku.com/clothing-2109.git
