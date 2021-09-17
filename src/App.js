@@ -21,7 +21,11 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser, collectionsArray } = this.props;
+    const {
+      setCurrentUser,
+      // WRITE DBB 1
+      // collectionsArray
+    } = this.props;
     // subscriber to Google Firebase Auth
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       // this.setState({ currentUser: user });
@@ -36,11 +40,12 @@ class App extends React.Component {
       } else {
         // current User is NULL
         setCurrentUser(userAuth);
-        addCollectionAndDocuments(
-          "collections",
-          // select what we write
-          collectionsArray.map(({ title, items }) => ({ title, items }))
-        );
+        // WRITE DBB 3
+        // addCollectionAndDocuments(
+        //   "collections",
+        //   // select what we write
+        //   collectionsArray.map(({ title, items }) => ({ title, items }))
+        // );
       }
     });
   }
@@ -80,7 +85,8 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   // get the main collections from the Data File
   // /redux/shop/shop.data.js  (to write in the DBB)
-  collectionsArray: selectCollectionsForPreview,
+  // WRITE DBB 2
+  // collectionsArray: selectCollectionsForPreview,
 });
 
 const mapDispatchToProps = (dispatch) => ({
