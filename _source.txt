@@ -7,3 +7,15 @@ https://www.npmjs.com/package/react-stripe-checkout
 
 // Heroku
 https://git.heroku.com/clothing-2109.git
+
+// Heroku deployment
+https://clothing-2109.herokuapp.com/
+
+// Redeploy on Heroku
+ https://devcenter.heroku.com/articles/github-integration
+
+ Steps:
+ https://www.udemy.com/course/complete-react-developer-zero-to-mastery/learn/lecture/15185126#questions
+
+
+// Styled-Components

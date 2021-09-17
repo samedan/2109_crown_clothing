@@ -20,7 +20,9 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!snapshot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
+    // GET objectOfSnapshot.data()
     try {
+      // POST
       await userRef.set({
         displayName,
         email,
@@ -32,6 +34,25 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     }
   }
   return userRef;
+};
+
+// WRITE TO the DATABASE
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
+  const collectionRef = firestore.collection(collectionKey);
+  console.log("collectionRef", collectionRef);
+  // create one single POST to the DBB
+  const batch = firestore.batch();
+  objectsToAdd.forEach((obj) => {
+    // random generate ID
+    const newDocRef = collectionRef.doc();
+    // console.log("new ID", newDocRef);
+    batch.set(newDocRef, obj);
+  });
+  // batch1, batch2, etc
+  return await batch.commit();
 };
 
 firebase.initializeApp(config);
