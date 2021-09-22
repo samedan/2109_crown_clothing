@@ -29,3 +29,16 @@ export const selectCollectionsForPreview = createSelector(
 //     (collection) => collection.id === COLLECTION_ID_MAP[collectionUrlParam]
 //   )
 // );
+
+export const selectIsCollectionFetching = createSelector(
+  // we want the shop {}
+  [selectShop],
+  (shop) => shop.isFetching
+);
+
+export const selectIsCollectionsLoaded = createSelector(
+  [selectShop],
+  // !!0 = false  !!null = false !!' = false
+  // truthy, true only if there is smth
+  (shop) => !!shop.collections
+);
